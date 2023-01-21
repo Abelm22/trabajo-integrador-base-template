@@ -10,4 +10,4 @@ async function getTouristCorridors(req, res){
     }
 };
 
-module.exports = {getTouristCorridors}
+module.exports = { getTouristCorridors }

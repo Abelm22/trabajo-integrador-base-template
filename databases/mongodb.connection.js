@@ -6,6 +6,4 @@ async function connectMongoDb(){
     return mongoose.connect(connectionString)
 }
 
-module.exports = {
-    connectMongoDb
-}
+module.exports = { connectMongoDb }

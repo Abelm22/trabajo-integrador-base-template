@@ -3,9 +3,16 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 require('dotenv').config();
+
+const mongodb = require('./databases/mongodb.connection');
+
 const touristCorridorRouter = require('./src/routes/touristCorridor.router');
 
 const app = express();
+
+mongodb.connectMongoDb()
+    .then(() => console.log('🚀 MongoDb Connected'))
+    .catch(err => console.log(err));
 
 app.use(logger('dev'));
 app.use(express.json());
