@@ -10,6 +10,6 @@ const touristCorridorSchema = new Schema({
   }
 });
 
-const TouristCorridor = mongoose.model('touristCorridor', touristCorridorSchema);
+const TouristCorridor = mongoose.model('TouristCorridor', touristCorridorSchema);
 
 module.exports = { TouristCorridor };

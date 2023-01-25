@@ -5,17 +5,17 @@ const router = express.Router();
 const {
     getDestinations,
     getDestination,
-    getDestinationByCorridor,
+    //getDestinationByCorridorId,
     createDestination,
     editDestination,
     deleteDestination,
   } = require("../controllers/destinations.controller");
   
-route.get("/", getDestinations);
-route.get("/:id", getDestination);
-route.get("/:corridor", getDestinationByCorridor);
-route.post("/", createDestination);
-route.patch("/:id", editDestination);
-route.delete("/:id", deleteDestination);
+router.get("/", getDestinations);
+router.get("/:id", getDestination);
+//router.get("/destination/:id", getDestinationByCorridorId);
+router.post("/create", createDestination);
+router.patch("/:id", editDestination);
+router.delete("/:id", deleteDestination);
 
 module.exports = router;

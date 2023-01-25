@@ -7,11 +7,12 @@ require('dotenv').config();
 const mongodb = require('./databases/mongodb.connection');
 
 const touristCorridorRouter = require('./src/routes/touristCorridor.router');
+const destinationRouter = require('./src/routes/destinations.router');
 
 const app = express();
 
 mongodb.connectMongoDb()
-    .then(() => console.log('🚀 MongoDb Connected'))
+    .then(() => console.log('[ 🚀 MongoDb connected ]'))
     .catch(err => console.log(err));
 
 app.use(logger('dev'));
@@ -20,7 +21,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//complete with your resource
-app.use('/touristCorridors', touristCorridorRouter);
+
+
+
+app.use('/index', touristCorridorRouter);
+app.use('/destination', destinationRouter);
 
 module.exports = app;

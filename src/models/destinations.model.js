@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const destinationsSchema = new Schema({
+const destinationSchema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
     corridor: [{
@@ -19,6 +19,6 @@ const destinationsSchema = new Schema({
     }
 });
 
-const Destination = mongoose.model('destination', destinationsSchema);
+const Destination = mongoose.model('Destination', destinationSchema);
 
 module.exports = { Destination };
