@@ -60,4 +60,10 @@ async function deleteCorridorById(id){
 }
 
 
-module.exports = { getCorridors, getCorridorById, createCorridor, editCorridorById, deleteCorridorById }
+module.exports = { 
+    getCorridors, 
+    getCorridorById, 
+    createCorridor, 
+    editCorridorById, 
+    deleteCorridorById 
+}

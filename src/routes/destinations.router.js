@@ -5,7 +5,7 @@ const router = express.Router();
 const {
     getDestinations,
     getDestination,
-    //getDestinationByCorridorId,
+    getDestinationByCorridorId,
     createDestination,
     editDestination,
     deleteDestination,
@@ -13,7 +13,7 @@ const {
   
 router.get("/", getDestinations);
 router.get("/:id", getDestination);
-//router.get("/destination/:id", getDestinationByCorridorId);
+router.get("/corridor/:id", getDestinationByCorridorId);
 router.post("/create", createDestination);
 router.patch("/:id", editDestination);
 router.delete("/:id", deleteDestination);

@@ -1,19 +1,21 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+
+
 const destinationSchema = new Schema({
-    name: { type: String, required: true },
-    description: { type: String, required: true },
-    corridor: [{
+    destinationName: { type: String, required: true },
+    destinationDescription: { type: String, required: true },
+    destinationCorridor: [{
         type: mongoose.Schema.Types.ObjectId, 
     	ref: 'touristCorridor'
     }],
-    images: {
+    destinationImages: {
         front: { type: String, required: true },
         details1: { type: String, required: true },
         details2: { type: String, required: true }
     },
-    position: {
+    destinationPosition: {
         longitude: { type: Number, required: true },   
         latitude: { type: Number, required: true }
     }

@@ -63,4 +63,10 @@ async function deleteTouristCorridor(req, res){
 
 
 
-module.exports = { getTouristCorridors, getTouristCorridor, createTouristCorridor, editTouristCorridor, deleteTouristCorridor }
+module.exports = { 
+    getTouristCorridors, 
+    getTouristCorridor, 
+    createTouristCorridor, 
+    editTouristCorridor, 
+    deleteTouristCorridor 
+}

@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+
+
 const touristCorridorSchema = new Schema({
   corridorName:  { type: String, required: true }, 
   corridorDescription: { type: String, required: true },

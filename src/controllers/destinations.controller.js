@@ -25,6 +25,19 @@ async function getDestination(req, res){
 
 
 
+async function getDestinationByCorridorId(req, res){
+    
+    try{
+        const {id} = req.params;
+        const place = await DestinationService.getDestinationByCorridor(id);
+        res.json(place);
+    } catch (error){
+        throw error;
+    }
+};
+
+
+
 async function createDestination(req, res){
     
     try{
@@ -63,4 +76,11 @@ async function deleteDestination(req, res){
 
 
 
-module.exports = { getDestinations, getDestination, createDestination, editDestination, deleteDestination }
+module.exports = { 
+    getDestinations, 
+    getDestination, 
+    getDestinationByCorridorId, 
+    createDestination, 
+    editDestination, 
+    deleteDestination 
+}

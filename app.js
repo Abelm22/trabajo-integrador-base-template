@@ -9,6 +9,7 @@ const mongodb = require('./databases/mongodb.connection');
 const touristCorridorRouter = require('./src/routes/touristCorridor.router');
 const destinationRouter = require('./src/routes/destinations.router');
 
+
 const app = express();
 
 mongodb.connectMongoDb()
@@ -24,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.use('/index', touristCorridorRouter);
-app.use('/destination', destinationRouter);
+app.use('/corridors', touristCorridorRouter);
+app.use('/destinations', destinationRouter);
+
 
 module.exports = app;

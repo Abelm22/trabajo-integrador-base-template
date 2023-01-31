@@ -11,8 +11,8 @@ const {
   
 router.get("/", getTouristCorridors);
 router.get("/:id", getTouristCorridor);
-router.post("/create", createTouristCorridor);
-router.patch("/edit/:id", editTouristCorridor);
-router.delete("/delete/:id", deleteTouristCorridor);
+router.post("/", createTouristCorridor);
+router.patch("/:id", editTouristCorridor);
+router.delete("/:id", deleteTouristCorridor);
 
 module.exports = router;
