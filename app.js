@@ -2,7 +2,9 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cors = require('cors');
 require('dotenv').config();
+
 
 const mongodb = require('./databases/mongodb.connection');
 
@@ -11,6 +13,7 @@ const destinationRouter = require('./src/routes/destinations.router');
 
 
 const app = express();
+app.use(cors());
 
 mongodb.connectMongoDb()
     .then(() => console.log('[ 🚀 MongoDb connected ]'))
