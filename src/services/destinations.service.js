@@ -1,3 +1,5 @@
+const Joi = require('joi');
+const { destinationSchema } = require('../models/schemas/destination.schema');
 const {Destination} = require('../models/destinations.model');
 
 
@@ -37,6 +39,7 @@ async function getDestinationByCorridor(id){
 
 async function createDestination(data){
     try {
+        Joi.assert(data, destinationSchema) 
         const place = new Destination(data)
         return place.save();
     } catch (error) {
@@ -48,6 +51,7 @@ async function createDestination(data){
 
 async function editDestinationById(id, data){
     try {
+        Joi.assert(data, destinationSchema)
         const place = await Destination.findById(id);
         place.destinationName = data.destinationName;
         place.destinationDescription = data.destinationDescription;

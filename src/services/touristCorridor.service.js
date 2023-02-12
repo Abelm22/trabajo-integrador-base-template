@@ -1,3 +1,5 @@
+const Joi = require('joi');
+const { corridorSchema } = require('../models/schemas/corridor.schema');
 const {TouristCorridor} = require('../models/touristCorridor.model');
 
 
@@ -26,6 +28,7 @@ async function getCorridorById(id){
 
 async function createCorridor(data){
     try {
+        Joi.assert(data, corridorSchema) 
         const corridor = new TouristCorridor(data)
         return corridor.save();
     } catch (error) {
@@ -37,6 +40,7 @@ async function createCorridor(data){
 
 async function editCorridorById(id, data){
     try {
+        Joi.assert(data, corridorSchema) 
         const corridor = await TouristCorridor.findById(id);
         corridor.corridorName = data.corridorName;
         corridor.corridorDescription = data.corridorDescription;

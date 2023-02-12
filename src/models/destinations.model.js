@@ -16,8 +16,8 @@ const destinationSchema = new Schema({
         details2: { type: String, required: true }
     },
     destinationPosition: {
-        longitude: { type: Number, required: true },   
-        latitude: { type: Number, required: true }
+        latitude: { type: Number, required: true },   
+        longitude: { type: Number, required: true }
     }
 });
 

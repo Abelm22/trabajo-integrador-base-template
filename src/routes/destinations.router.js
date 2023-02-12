@@ -14,7 +14,7 @@ const {
 router.get("/", getDestinations);
 router.get("/:id", getDestination);
 router.get("/corridor/:id", getDestinationByCorridorId);
-router.post("/create", createDestination);
+router.post("/", createDestination);
 router.patch("/:id", editDestination);
 router.delete("/:id", deleteDestination);
 
